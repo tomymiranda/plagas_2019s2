@@ -1,0 +1,24 @@
+import ElementosAtacados.*
+
+test " el barrio es copado"{
+	
+	const barrioMitre = new Barrio()
+	
+	 barrioMitre.agregarElementoAlBarrio(new Hogar(nivelDeMugre = 20, confort = 100))
+	 barrioMitre.agregarElementoAlBarrio(new Huerta(capacidadDeProduccion = 10))
+	 barrioMitre.agregarElementoAlBarrio(new Mascota(nivelDeSalud = 251))
+
+	assert.that(barrioMitre.esCopado())
+}
+
+test "el barrio no es copado"{
+	
+	const barrioMitre = new Barrio()
+
+	 barrioMitre.agregarElementoAlBarrio(new Hogar(nivelDeMugre = 20, confort = 100))
+	 barrioMitre.agregarElementoAlBarrio(new Huerta(capacidadDeProduccion = 4))
+	 barrioMitre.agregarElementoAlBarrio(new Mascota(nivelDeSalud = 249))
+
+	assert.notThat(barrioMitre.esCopado())
+}
+
